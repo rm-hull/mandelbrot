@@ -15,5 +15,10 @@ export default defineConfig(() => {
   return {
     plugins: [react()],
     base: "/mandelbrot",
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: ["./src/setupTests.ts"],
+    },
   };
 });
