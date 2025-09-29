@@ -1375,12 +1375,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^19.1.14":
-  version: 19.1.14
-  resolution: "@types/react@npm:19.1.14"
+"@types/react@npm:^19.1.15":
+  version: 19.1.15
+  resolution: "@types/react@npm:19.1.15"
   dependencies:
     csstype: "npm:^3.0.2"
-  checksum: 10/080368cf7c8963f6a80c9bb8530d6f2e7f1b53ac48cc83aa98b67fbd91c8126435e11a2e95e0cc7275677f0bb0fb92789b7240e3d21c3eab75f5874d153addda
+  checksum: 10/9acff968d35e02152a817a11f8572cbcc985d9ea93616898b34e75ab193af20f9ab46274217abd12cd1ff4e4150081143b13ba20e0bb503efd64fe6601cb8bd8
   languageName: node
   linkType: hard
 
@@ -3092,7 +3092,7 @@ __metadata:
     "@testing-library/jest-dom": "npm:^6.8.0"
     "@testing-library/react": "npm:^16.3.0"
     "@types/node": "npm:^24.5.2"
-    "@types/react": "npm:^19.1.14"
+    "@types/react": "npm:^19.1.15"
     "@types/react-dom": "npm:^19.1.9"
     "@vitejs/plugin-react": "npm:^5.0.3"
     "@vitest/coverage-v8": "npm:3.2.4"
