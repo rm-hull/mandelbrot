@@ -34,7 +34,7 @@
     "globals": "^16.5.0",
     "jsdom": "^27.1.0",
     "typescript": "~5.9.3",
-    "typescript-eslint": "^8.46.3",
+    "typescript-eslint": "^8.46.4",
     "vite": "^7.2.2",
     "vitest": "^4.0.8",
     "webgl-mock": "^0.1.7"
