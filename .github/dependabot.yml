@@ -17,6 +17,9 @@ updates:
       vite:
         patterns:
           - "*vite*"
+      react:
+        patterns:
+          - "react*"
   - package-ecosystem: github-actions
     directory: /
     schedule:
