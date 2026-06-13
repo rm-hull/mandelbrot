@@ -7,6 +7,7 @@
   position: absolute;
   top: 0;
   width: 250px;
+  user-select: none;
 }
 
 .controls label {

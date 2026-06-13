@@ -87,10 +87,23 @@ export default function Renderer() {
     programRef,
   ]);
 
-  const handleZoom = useCallback((event: WheelEvent<HTMLCanvasElement>) => {
+  const handleZoom = useCallback((event: WheelEvent) => {
     const zoomFactor = event.deltaY > 0 ? 1.1 : 0.9;
-    setZoom((prev) => Math.max(0.000001, Math.min(2.0, prev * zoomFactor)));
+    setZoom((prev) => Math.max(1e-15, Math.min(2.0, prev * zoomFactor)));
   }, []);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      handleZoom(e);
+    };
+
+    canvas.addEventListener("wheel", onWheel, { passive: false });
+    return () => canvas.removeEventListener("wheel", onWheel);
+  }, [canvasRef, handleZoom]);
 
   const handleDragStart = useCallback(
     (point: Point) => {
@@ -160,12 +173,13 @@ export default function Renderer() {
   );
 
   return (
-    <div ref={containerRef}>
+      <div ref={containerRef} style={{ touchAction: "none" }}>
       <canvas
         ref={canvasRef}
         className={classNames(styles.canvas, { [styles.dragging]: isDragging })}
         style={{ width: "100%", height: "100vh" }}
-        onWheel={handleZoom}
+        // onWheel is now handled by the manual useEffect listener
+        onMouseDown={handleMouseDragStart}
         onMouseDown={handleMouseDragStart}
         onMouseMove={handleMouseDragging}
         onMouseUp={handleDragStop}
