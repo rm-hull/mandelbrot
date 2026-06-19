@@ -4,7 +4,6 @@ import {
   useState,
   useCallback,
   MouseEvent,
-  WheelEvent,
 } from "react";
 import styles from "./Renderer.module.css";
 import vertexShaderSource from "./webgl/vertex_shader.glsl?raw";
@@ -173,13 +172,11 @@ export default function Renderer() {
   );
 
   return (
-      <div ref={containerRef} style={{ touchAction: "none" }}>
+    <div ref={containerRef} style={{ touchAction: "none" }}>
       <canvas
         ref={canvasRef}
         className={classNames(styles.canvas, { [styles.dragging]: isDragging })}
         style={{ width: "100%", height: "100vh" }}
-        // onWheel is now handled by the manual useEffect listener
-        onMouseDown={handleMouseDragStart}
         onMouseDown={handleMouseDragStart}
         onMouseMove={handleMouseDragging}
         onMouseUp={handleDragStop}
