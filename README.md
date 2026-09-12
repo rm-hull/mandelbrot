@@ -9,6 +9,6 @@ Supports (fast) drag and zoom capability, assuming you are using a browser that 
 ## Running locally
 
 ```
-yarn install
-yarn dev
+pnpm install
+pnpm dev
 ```
