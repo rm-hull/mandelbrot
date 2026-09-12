@@ -19,28 +19,31 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Setup Yarn
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6.1.0
+
+      - name: Setup Node
         uses: actions/setup-node@v7
         with:
           node-version: "24"
-          cache: "yarn"
+          cache: "pnpm"
 
       - name: Install dependencies
-        run: yarn install
+        run: pnpm install
 
       - name: Lint
-        run: yarn lint
+        run: pnpm lint
         continue-on-error: true
 
       - name: Test
-        run: yarn test:ci
+        run: pnpm test:ci
 
       - name: Coveralls
         uses: coverallsapp/github-action@v2
         continue-on-error: true
 
       - name: Build
-        run: yarn build && cp ./dist/index.html ./dist/404.html
+        run: pnpm build && cp ./dist/index.html ./dist/404.html
 
       - name: Store dist files
         uses: actions/upload-artifact@v7
