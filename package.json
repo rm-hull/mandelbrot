@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "react-error-boundary": "^6.1.6"
   },
   "devDependencies": {
